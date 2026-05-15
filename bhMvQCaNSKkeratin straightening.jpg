@@ -1,0 +1,15 @@
+<?php
+define('DIR', '../../');
+require_once DIR . 'config.php';
+
+$admin = new Admin();
+
+if (isset($_GET['id'])) {
+
+    $id = $_GET['id'];
+    $reason = $_GET['reason'];
+    $stmt = $admin->cud("UPDATE `booking` SET `b_status`='reject',`b_reason`='$reason' WHERE b_id='$id'", "update");
+    echo "<script>alert('Rejected Successfully');window.location='../viewbook.php'</script>";
+
+}
+?>

@@ -1,0 +1,31 @@
+ <?php
+define('DIR', '../../');
+require_once DIR .'config.php';
+
+$control = new Controller(); 
+$admin = new Admin();
+
+
+
+$id = $_GET['id'];
+$a = 0;
+
+
+
+
+
+
+$stmt=$admin -> cud("UPDATE `beautician` SET `adminstatus`='$a' WHERE `fp_id`='$id'","updated");
+
+	
+
+	  echo"<script>
+            alert('your successfully suspended this account');
+            window.location.href='../viewprovider.php';
+          </script>";
+
+
+
+
+
+?>
